@@ -1,12 +1,26 @@
 import { Image } from 'expo-image';
+import {useEffect, useRef} from "react";
 import { Platform, StyleSheet } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import {Link} from 'expo-router'
+import axios from 'axios'
+import {useQuery} from "@tanstack/react-query";
+import {useIsFocused} from "@react-navigation/core";
+
 
 export default function HomeScreen() {
+    const isFocused = useIsFocused()
+
+    const {} = useQuery({
+        queryKey: ['books'],
+        // queryFn: getBooks,
+        subscribed: isFocused
+    })
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -20,6 +34,7 @@ export default function HomeScreen() {
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
+      <Link href="../settings">View details</Link>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
