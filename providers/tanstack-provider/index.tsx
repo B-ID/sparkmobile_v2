@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 type TanStackProps = PropsWithChildren;
 
-const TanStackProvider: FC<TanStackProps> = (props) => {
+export const TanStackProvider: FC<TanStackProps> = (props) => {
   const { children } = props;
   const [queryClient] = useState(
     () =>
@@ -19,5 +19,3 @@ const TanStackProvider: FC<TanStackProps> = (props) => {
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 };
-
-export default TanStackProvider;

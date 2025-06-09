@@ -1,4 +1,3 @@
-
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
@@ -26,19 +25,64 @@ export default function TabLayout() {
           },
           default: {},
         }),
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="house.fill" color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
           title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="paperplane.fill" color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="chat/index"
+        options={{
+          title: 'Chat',
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="paperplane.fill" color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="moments/index"
+        options={{
+          title: 'Moments',
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="paperplane.fill" color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="therapy/index"
+        options={{
+          title: 'Therapy',
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="paperplane.fill" color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="profile/index"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="paperplane.fill" color={color} />
+          ),
         }}
       />
     </Tabs>
