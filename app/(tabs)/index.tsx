@@ -23,7 +23,7 @@ export default function HomeScreen() {
   const router = useRouter();
 
   const goToSettings = () => {
-    router.push('/settings');
+    router.push('/modal');
   };
 
   return (

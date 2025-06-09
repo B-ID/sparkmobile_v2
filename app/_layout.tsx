@@ -45,6 +45,7 @@ export default function RootLayout() {
           name="chat"
         />
         <Stack.Screen options={{ headerShown: false }} name="paywall" />
+        <Stack.Screen options={{ headerShown: true, presentation: 'modal'}} name="modal" />
       </Stack>
       <StatusBar style="auto" />
     </ProviderTree>

@@ -1,13 +1,12 @@
-import { View, Text } from 'react-native';
 import { withPartnerConnect } from '@/components/HOCs/with-partner-connect';
-import { withPremiumAccess } from '@/components/HOCs/with-premium-access';
+import { Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const ChatScreen = () => {
   return (
     <SafeAreaView>
       <View>
-        <Text>Chat screen</Text>
+        <Text>Chat screens</Text>
       </View>
     </SafeAreaView>
   );
