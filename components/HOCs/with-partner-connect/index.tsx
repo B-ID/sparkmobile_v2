@@ -1,5 +1,5 @@
-import { useFocusEffect, useRouter } from 'expo-router';
 import React from 'react';
+import { useFocusEffect, useRouter } from 'expo-router';
 
 export const withPartnerConnect = (Component: React.ComponentType<any>) => {
   // eslint-disable-next-line react/display-name

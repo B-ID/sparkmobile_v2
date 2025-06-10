@@ -1,6 +1,6 @@
+import React from 'react';
 import { usePremium } from '@/providers/premium-provider';
 import { useFocusEffect, useRouter } from 'expo-router';
-import React from 'react';
 
 export const withPremiumAccess = (Component: React.ComponentType<any>) => {
   // eslint-disable-next-line react/display-name
