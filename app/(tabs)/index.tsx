@@ -23,7 +23,7 @@ export default function HomeScreen() {
   const router = useRouter();
 
   const goToSettings = () => {
-    router.push('/modal');
+    router.push('/settings');
   };
 
   return (
@@ -42,8 +42,13 @@ export default function HomeScreen() {
       </ThemedView>
 
       <ThemedView>
-        <Link href="/settings">View details</Link>
-        <Link href="chat">Link to chat</Link>
+        <Link href="/settings">
+        <ThemedText>link to settings</ThemedText>
+        </Link>
+
+        <Link href="/chat">
+        <ThemedText>link to chat</ThemedText>
+        </Link>
       </ThemedView>
 
       <Button onPress={goToSettings} title={'go to settings'} />

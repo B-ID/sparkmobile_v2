@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
 import { usePremium } from '@/providers/premium-provider';
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
+import React from 'react';
 
 export const withPremiumAccess = (Component: React.ComponentType<any>) => {
   // eslint-disable-next-line react/display-name
@@ -8,17 +8,13 @@ export const withPremiumAccess = (Component: React.ComponentType<any>) => {
     const router = useRouter();
     const { isPremium } = usePremium();
 
-    const gotToPaywall = () => {
-      router.replace('/paywall');
-    };
-
     //Todo => Create a local SQL database to store partner connection status and premium access.
 
-    useEffect(() => {
+    useFocusEffect(() => {
       if (!isPremium) {
-        gotToPaywall();
+        router.replace('/paywall');
       }
-    }, [isPremium]);
+    });
 
     return isPremium ? <Component {...props} /> : null;
   };
