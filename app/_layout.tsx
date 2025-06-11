@@ -18,7 +18,7 @@ export default function RootLayout() {
   }
 
   //?Todo => Replace with actual authentication logic
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
 
   return (
