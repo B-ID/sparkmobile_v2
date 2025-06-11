@@ -17,37 +17,52 @@ export default function RootLayout() {
     return null;
   }
 
+  //?Todo => Replace with actual authentication logic
+  const isLoggedIn = false;
+
+
   return (
     <ProviderTree>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-        <Stack.Screen name="settings" />
-        <Stack.Screen
-          name="connect-partner"
-          options={{
-            headerShown: false,
-            presentation: 'modal',
-            animation: 'fade',
-          }}
-        />
-        <Stack.Screen
-          options={{
-            headerShown: false,
-            presentation: 'modal',
-            animation: 'fade',
-          }}
-          name="chat"
-        />
-        <Stack.Screen
-          name="(modals)"
-          options={{
-            headerShown: false,
-            presentation: 'modal',
-            animation: 'slide_from_bottom',
-            animationDuration: 1000,
-          }}
-        />
+        <Stack.Protected guard={isLoggedIn}>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="settings" />
+          <Stack.Screen
+            name="connect-partner"
+            options={{
+              headerShown: false,
+              presentation: 'modal',
+              animation: 'fade',
+            }}
+          />
+          <Stack.Screen
+            options={{
+              headerShown: false,
+              presentation: 'modal',
+              animation: 'fade',
+            }}
+            name="chat"
+          />
+          <Stack.Screen
+            name="(modals)"
+            options={{
+              headerShown: false,
+              presentation: 'modal',
+              animation: 'slide_from_bottom',
+              animationDuration: 1000,
+            }}
+          />
+          <Stack.Screen name="(onboarding)" />
+        </Stack.Protected>
+        <Stack.Protected guard={!isLoggedIn}>
+          <Stack.Screen
+            name="(auth)"
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen name="+not-found" />
+        </Stack.Protected>
       </Stack>
       <StatusBar style="auto" />
     </ProviderTree>
